@@ -14,7 +14,10 @@ import TodoItem from '../components/TodoItem';
 export default class CompleteScreen extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      todoList: TODOS,
 
+    };
   }
   static navigationOptions = {
     title: 'Your Complete Todo List',
@@ -26,8 +29,9 @@ export default class CompleteScreen extends Component {
       fontWeight: 'bold',
     },
   };
+  
   render() {
-    const todoList  = this.props.navigation.getParam('todoList');
+    const { todoList } = this.state;
     return (<ScrollView contentContainerStyle={styles.container}>
       {
         todoList.map(item => {

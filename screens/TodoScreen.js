@@ -28,6 +28,7 @@ export default class TodoScreen extends Component {
     headerTitleStyle: {
       fontWeight: 'bold',
     },
+    
   };
 
   onChange = text => {
@@ -47,7 +48,7 @@ export default class TodoScreen extends Component {
     }, () => {
       setTimeout(() => {
         this.props.navigation.navigate('TodoDetail', { data: todoItem });
-      }, 2000
+      }, 500
 
       )
     }
